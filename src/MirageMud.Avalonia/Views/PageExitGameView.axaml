@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MirageMud.Avalonia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:PageExitGameViewModel"
+             x:Class="MirageMud.Avalonia.Views.PageExitGameView">
+
+    <Grid RowDefinitions="60,*,Auto">
+        <Border Grid.Row="0">
+            <TextBlock Classes="h1" Text="Exit Game" />
+        </Border>
+
+        <StackPanel Grid.Row="1" Margin="0 10 0 0">
+            <TextBlock TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       LineHeight="24"
+                       Margin="0 0 0 30">
+                Please confirm that you wish to exit the game.
+            </TextBlock>
+
+            <Button
+                Margin="10" Width="140" Padding="5 8"
+                HorizontalContentAlignment="Center"
+                HorizontalAlignment="Center"
+                Content="Confirm" Command="{Binding ExitGameCommand}" />
+        </StackPanel>
+        
+    </Grid>
+
+</UserControl>

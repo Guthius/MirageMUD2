@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MirageMud.Avalonia.Views.PageCreditsView">
+    
+    <Grid RowDefinitions="60,*,Auto">
+        <Border Grid.Row="0">
+            <TextBlock Classes="h1" Text="Credits" />
+        </Border>
+
+        <StackPanel Grid.Row="1" Margin="0 10 0 0">
+            <TextBlock TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       LineHeight="24" Width="350"
+                       Margin="0 0 0 40">
+                MirageSource has and always will be a collective effort by the MirageSource community since it's conception.
+            </TextBlock>
+
+            <TextBlock TextAlignment="Center"
+                       FontWeight="Bold" 
+                       Margin="0 0 0 10">
+                Special Thanks
+            </TextBlock>
+
+            <TextBlock TextAlignment="Center"
+                       LineHeight="24">
+                <Run>Kevin Kaymak - Networking code</Run><LineBreak />
+                <Run>disc330 - Bug fixes</Run>
+            </TextBlock>
+        </StackPanel>
+        
+    </Grid>
+    
+</UserControl>

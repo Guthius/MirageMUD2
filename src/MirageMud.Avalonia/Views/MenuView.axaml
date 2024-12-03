@@ -19,12 +19,13 @@
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="FontSize" Value="13" />
             <Setter Property="Padding" Value="10,8" />
-            <Setter Property="CornerRadius" Value="0"/>
+            <Setter Property="CornerRadius" Value="0" />
         </Style>
     </UserControl.Styles>
 
     <Grid ColumnDefinitions="200,*">
-        <Border Grid.Column="0" Background="{DynamicResource MenuFlyoutPresenterBackground}">
+        <Border Grid.Column="0" Background="{DynamicResource MenuFlyoutPresenterBackground}"
+                BoxShadow="0 0 10 2 #20000000">
             <Grid RowDefinitions="Auto,*,Auto">
                 <StackPanel Grid.Row="0">
                     <Border Padding="10">
@@ -42,25 +43,31 @@
                     <TextBlock
                         Text="Not Logged In"
                         TextAlignment="Center"
-                        FontSize="11"
+                        FontSize="11" Foreground="DarkGoldenrod"
                         Margin="0,0,0,20" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" VerticalAlignment="Stretch">
-                    <Button Classes="menu-item" Content="Home" />
-                    <Button Classes="menu-item" Content="New Account" />
-                    <Button Classes="menu-item" Content="Login" />
-                    <Button Classes="menu-item" Content="IP Config" />
-                    <Button Classes="menu-item" Content="Game Options" />
+                    <Button Classes="menu-item" Content="Home" Command="{Binding ShowHomeCommand}" />
+                    <Button Classes="menu-item" Content="New Account" Command="{Binding ShowNewAccountPageCommand}" />
+                    <Button Classes="menu-item" Content="Login" Command="{Binding ShowLoginPageCommand}" />
+                    <Button Classes="menu-item" Content="IP Config" Command="{Binding ShowIpConfigPageCommand}" />
+                    <Button Classes="menu-item" Content="Game Options" Command="{Binding ShowGameOptionsPageCommand}" />
+                    <Button Classes="menu-item" Content="Credits" Command="{Binding ShowCreditsPageCommand}" />
                 </StackPanel>
 
-                <Button Grid.Row="2" Classes="menu-item" VerticalAlignment="Bottom" Content="Credits" />
+                <Button Grid.Row="2"
+                        Classes="menu-item"
+                        VerticalAlignment="Bottom"
+                        Content="Exit Game"
+                        Margin="0 0 0 5"
+                        Command="{Binding ShowExitGamePageCommand}" />
             </Grid>
         </Border>
 
-        <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <TransitioningContentControl Margin="10" Content="{Binding CurrentPage}" />
-        </StackPanel>
+        <DockPanel Grid.Column="1" VerticalAlignment="Stretch">
+            <TransitioningContentControl Content="{Binding CurrentPage}" />
+        </DockPanel>
     </Grid>
 
 </UserControl>

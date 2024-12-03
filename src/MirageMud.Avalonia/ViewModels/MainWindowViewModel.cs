@@ -1,6 +1,8 @@
-﻿namespace MirageMud.Avalonia.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-public sealed class MainWindowViewModel : ViewModelBase
+namespace MirageMud.Avalonia.ViewModels;
+
+internal sealed class MainWindowViewModel : ObservableObject
 {
     public string Greeting => "Welcome to Avalonia!";
 }

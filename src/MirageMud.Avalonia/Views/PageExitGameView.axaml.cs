@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace MirageMud.Avalonia.Views;
 
-public partial class PageWelcomeView : UserControl
+public partial class PageExitGameView : UserControl
 {
-    public PageWelcomeView()
+    public PageExitGameView()
     {
         InitializeComponent();
     }

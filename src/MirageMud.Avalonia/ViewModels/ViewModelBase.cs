@@ -1,7 +1,7 @@
-﻿using ReactiveUI;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using JetBrains.Annotations;
 
 namespace MirageMud.Avalonia.ViewModels;
 
-public class ViewModelBase : ReactiveObject
-{
-}
+[UsedImplicitly(ImplicitUseTargetFlags.WithInheritors)]
+internal abstract class ViewModelBase : ObservableObject;

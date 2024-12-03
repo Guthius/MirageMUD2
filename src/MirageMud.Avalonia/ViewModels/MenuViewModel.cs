@@ -1,14 +1,52 @@
-using ReactiveUI;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace MirageMud.Avalonia.ViewModels;
 
-public sealed class MenuViewModel : ViewModelBase
+internal sealed partial class MenuViewModel : ObservableObject
 {
-    private PageViewModelBase _currentPage = new PageWelcomeViewModel();
+    [ObservableProperty]
+    private PageViewModelBase _currentPage = new PageLoginViewModel();
 
-    public PageViewModelBase CurrentPage
+    [RelayCommand]
+    private void ShowHome()
     {
-        get => _currentPage;
-        set => this.RaiseAndSetIfChanged(ref _currentPage, value);
+        CurrentPage = new PageHomeViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowNewAccountPage()
+    {
+        CurrentPage = new PageNewAccountViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowLoginPage()
+    {
+        CurrentPage = new PageLoginViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowIpConfigPage()
+    {
+        CurrentPage = new PageIpConfigViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowGameOptionsPage()
+    {
+        CurrentPage = new PageGameOptionsViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowCreditsPage()
+    {
+        CurrentPage = new PageCreditsViewModel();
+    }
+
+    [RelayCommand]
+    private void ShowExitGamePage()
+    {
+        CurrentPage = new PageExitGameViewModel();
     }
 }
