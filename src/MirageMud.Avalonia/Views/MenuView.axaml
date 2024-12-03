@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MirageMud.Avalonia.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="vm:MenuViewModel"
+             x:Class="MirageMud.Avalonia.Views.MenuView">
+
+    <Design.DataContext>
+        <vm:MenuViewModel />
+    </Design.DataContext>
+
+    <UserControl.Styles>
+        <Style Selector="Button.menu-item">
+            <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Padding" Value="10,8" />
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+    </UserControl.Styles>
+
+    <Grid ColumnDefinitions="200,*">
+        <Border Grid.Column="0" Background="{DynamicResource MenuFlyoutPresenterBackground}">
+            <Grid RowDefinitions="Auto,*,Auto">
+                <StackPanel Grid.Row="0">
+                    <Border Padding="10">
+                        <Image
+                            Source="../Assets/logo_small.png"
+                            Stretch="None" />
+                    </Border>
+
+                    <TextBlock
+                        Text="MirageMUD 2"
+                        TextAlignment="Center"
+                        FontWeight="Bold" FontSize="16"
+                        Margin="0,0,0,5" />
+
+                    <TextBlock
+                        Text="Not Logged In"
+                        TextAlignment="Center"
+                        FontSize="11"
+                        Margin="0,0,0,20" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Stretch">
+                    <Button Classes="menu-item" Content="Home" />
+                    <Button Classes="menu-item" Content="New Account" />
+                    <Button Classes="menu-item" Content="Login" />
+                    <Button Classes="menu-item" Content="IP Config" />
+                    <Button Classes="menu-item" Content="Game Options" />
+                </StackPanel>
+
+                <Button Grid.Row="2" Classes="menu-item" VerticalAlignment="Bottom" Content="Credits" />
+            </Grid>
+        </Border>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TransitioningContentControl Margin="10" Content="{Binding CurrentPage}" />
+        </StackPanel>
+    </Grid>
+
+</UserControl>

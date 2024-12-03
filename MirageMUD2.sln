@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MirageMUD_Server", "MirageM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MirageMUD2_WPFClient", "MirageMUD2_WPFClient\MirageMUD2_WPFClient.csproj", "{8A97AD65-19DE-4E70-9B45-ECC6BB9D651A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FA1CD25A-E892-43B1-BDE0-BC90073F5EC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MirageMud.Avalonia", "src\MirageMud.Avalonia\MirageMud.Avalonia.csproj", "{543DBF97-FFA5-4228-846C-990CC70ACF58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{8A97AD65-19DE-4E70-9B45-ECC6BB9D651A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A97AD65-19DE-4E70-9B45-ECC6BB9D651A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A97AD65-19DE-4E70-9B45-ECC6BB9D651A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{543DBF97-FFA5-4228-846C-990CC70ACF58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543DBF97-FFA5-4228-846C-990CC70ACF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543DBF97-FFA5-4228-846C-990CC70ACF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543DBF97-FFA5-4228-846C-990CC70ACF58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,5 +48,8 @@ Global
 		Bindings\Bindings.projitems*{1a4ff3ed-7e17-457e-ad54-aa1ba4b0111c}*SharedItemsImports = 13
 		Bindings\Bindings.projitems*{7eb053a5-c55f-4c83-8279-2676e3b9b3a1}*SharedItemsImports = 5
 		Bindings\Bindings.projitems*{a2b98bc6-0ae9-4b09-a09d-631aa34152d4}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{543DBF97-FFA5-4228-846C-990CC70ACF58} = {FA1CD25A-E892-43B1-BDE0-BC90073F5EC3}
 	EndGlobalSection
 EndGlobal

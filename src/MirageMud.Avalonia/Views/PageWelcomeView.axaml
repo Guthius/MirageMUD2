@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MirageMud.Avalonia.Views.PageWelcomeView">
+
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock
+            Margin="0,0,0,10"
+            FontWeight="Bold"
+            FontSize="16"
+            TextAlignment="Center"
+            Text="Welcome" />
+
+        <TextBlock TextAlignment="Center"
+                   TextWrapping="Wrap"
+                   Width="260" FontSize="13"
+                   LineHeight="25">
+
+            <Run>Welcome to MirageMUD 2, the most advanced stand-alone graphical MUD engine on the planet.</Run>
+            <LineBreak /><LineBreak />
+            <Run>Use the left navigation to create a new account or log into the server.</Run>
+
+        </TextBlock>
+    </StackPanel>
+
+</UserControl>
