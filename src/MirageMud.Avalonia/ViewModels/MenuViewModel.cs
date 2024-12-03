@@ -8,45 +8,55 @@ internal sealed partial class MenuViewModel : ObservableObject
     [ObservableProperty]
     private PageViewModelBase _currentPage = new PageLoginViewModel();
 
+    private void SwitchPage<TPage>() where TPage : PageViewModelBase, new()
+    {
+        if (CurrentPage is TPage)
+        {
+            return;
+        }
+        
+        CurrentPage = new TPage();
+    }
+    
     [RelayCommand]
     private void ShowHome()
     {
-        CurrentPage = new PageHomeViewModel();
+        SwitchPage<PageHomeViewModel>();
     }
 
     [RelayCommand]
     private void ShowNewAccountPage()
     {
-        CurrentPage = new PageNewAccountViewModel();
+        SwitchPage<PageNewAccountViewModel>();
     }
 
     [RelayCommand]
     private void ShowLoginPage()
     {
-        CurrentPage = new PageLoginViewModel();
+        SwitchPage<PageLoginViewModel>();
     }
 
     [RelayCommand]
     private void ShowIpConfigPage()
     {
-        CurrentPage = new PageIpConfigViewModel();
+        SwitchPage<PageIpConfigViewModel>();
     }
 
     [RelayCommand]
     private void ShowGameOptionsPage()
     {
-        CurrentPage = new PageGameOptionsViewModel();
+        SwitchPage<PageGameOptionsViewModel>();
     }
 
     [RelayCommand]
     private void ShowCreditsPage()
     {
-        CurrentPage = new PageCreditsViewModel();
+        SwitchPage<PageCreditsViewModel>();
     }
 
     [RelayCommand]
     private void ShowExitGamePage()
     {
-        CurrentPage = new PageExitGameViewModel();
+        SwitchPage<PageExitGameViewModel>();
     }
 }
